@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #252525;
+    color: #FAF0AF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    margin: 5rem 0 5rem 0;
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: #af4c4c;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 20rem;
+    height: 5rem;
+    margin: 10rem 0 5rem 0;
+}
+
+input {
+    background-color: #ffffff;
+    color: #af4c4c;
+    width: 15rem;
+    height: 2rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: #af4c4c;
+    color: #FAF0AF;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem;
+}
+    button:hover{
+        background-color: #d96b6b;
+        cursor: pointer;
+    }
+
+#playerCard {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #af4c4c;
+    border-radius: 10px;
+    width: 50rem;
+    height: 30rem;
+    margin: 5rem;
+}
+    #generalData {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    #rankedData {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 48rem;
+    }
+        
+        .queueData {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 1rem;
+            border-radius: 10px;
+            width: 30%;
+        }
+            .queueData h2 {
+                color: #FAF0AF;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+   .cell {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+        .cell p {
+            color: #FAF0AF;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .cell span {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+.hidden {
+    display: none;
+}
+
+#FillFormError{
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem;
+}
