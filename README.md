@@ -1,6 +1,6 @@
 # LeaguePlayerCardGenerator
 
-welcome to my first website project made with gihub in mind!
+welcome to my first website project made with github in mind!
 
 As a Cs student, web developer and League player I decided to combine my interests into one simple github project.
 
