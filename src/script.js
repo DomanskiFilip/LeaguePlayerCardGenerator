@@ -28,7 +28,6 @@ async function getBasicInfo(server, summonerName, apiKey) {
     document.getElementById("summoner").innerHTML = data.name;
     document.getElementById("summonerLevel").innerHTML = data.summonerLevel;
     document.getElementById("summonerId").innerHTML = data.id;
-    console.log(data);
     getRankInfo(server, apiKey);
     getTftInfo(server, apiKey)
 }
