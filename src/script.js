@@ -44,10 +44,10 @@ async function getRankInfo(server, apiKey) {
     document.getElementById("summonerWins&LoosesSolo").innerHTML = rankData[0].wins + " / " + rankData[0].losses;
     document.getElementById("WinRatioSolo").innerHTML = (Math.round((rankData[0].wins / rankData[0].losses)* 100) / 100).toFixed(2);
     // data from flex ranked queue
-    document.getElementById("summonerRankFlex").innerHTML = rankData[2].tier + " " + rankData[2].rank;
-    document.getElementById("summonerLeaguePointsFlex").innerHTML = rankData[2].leaguePoints;
-    document.getElementById("summonerWins&LoosesFlex").innerHTML = rankData[2].wins + " / " + rankData[2].losses;
-    document.getElementById("WinRatioFlex").innerHTML = (Math.round((rankData[2].wins / rankData[2].losses)* 100) / 100).toFixed(2);
+    document.getElementById("summonerRankFlex").innerHTML = rankData[1].tier + " " + rankData[1].rank;
+    document.getElementById("summonerLeaguePointsFlex").innerHTML = rankData[1].leaguePoints;
+    document.getElementById("summonerWins&LoosesFlex").innerHTML = rankData[1].wins + " / " + rankData[1].losses;
+    document.getElementById("WinRatioFlex").innerHTML = (Math.round((rankData[1].wins / rankData[1].losses)* 100) / 100).toFixed(2);
     console.log(rankData);
 }
 
