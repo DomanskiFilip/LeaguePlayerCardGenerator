@@ -13,3 +13,5 @@ The app fetches information about the account from riot games server and display
 This project has a massive potential when it comes to new features so I am open for anybody to submit theire ideas and changes.
 
 you can also find the page at: http://adappstudio.co.uk/Filip/LPCG/
+
+!!!RIOT itroduced a new gamemode called Arena and stores data for it in different entities for each players. My account has Arena data were Flex data use to be while my friend has it the correct way sry for inconvinience will update as soo as I find a solution!!!
