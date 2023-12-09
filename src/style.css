@@ -69,7 +69,7 @@ button {
     padding: 1rem;
     background-color: #af4c4c;
     border-radius: 10px;
-    width: 50rem;
+    width: 60rem;
     height: 30rem;
     margin: 5rem;
 }
@@ -87,7 +87,7 @@ button {
         justify-content: space-around;
         padding: 1rem;
         border-radius: 10px;
-        width: 48rem;
+        width: 58rem;
     }
         
         .queueData {

@@ -45,10 +45,10 @@ async function getRankInfo(server, apiKey) {
     document.getElementById("summonerWins&LoosesSolo").innerHTML = rankData[0].wins + " / " + rankData[0].losses;
     document.getElementById("WinRatioSolo").innerHTML = (Math.round((rankData[0].wins / rankData[0].losses)* 100) / 100).toFixed(2);
     // data from flex ranked queue
-    document.getElementById("summonerRankFlex").innerHTML = rankData[1].tier + " " + rankData[1].rank;
-    document.getElementById("summonerLeaguePointsFlex").innerHTML = rankData[1].leaguePoints;
-    document.getElementById("summonerWins&LoosesFlex").innerHTML = rankData[1].wins + " / " + rankData[1].losses;
-    document.getElementById("WinRatioFlex").innerHTML = (Math.round((rankData[1].wins / rankData[1].losses)* 100) / 100).toFixed(2);
+    document.getElementById("summonerRankFlex").innerHTML = rankData[2].tier + " " + rankData[2].rank;
+    document.getElementById("summonerLeaguePointsFlex").innerHTML = rankData[2].leaguePoints;
+    document.getElementById("summonerWins&LoosesFlex").innerHTML = rankData[2].wins + " / " + rankData[2].losses;
+    document.getElementById("WinRatioFlex").innerHTML = (Math.round((rankData[2].wins / rankData[2].losses)* 100) / 100).toFixed(2);
     console.log(rankData);
 }
 
@@ -58,10 +58,16 @@ async function getTftInfo(server, apiKey) {
     const url = "https://" + server + ".api.riotgames.com/tft/league/v1/entries/by-summoner/" + summonerId + "?api_key=" + apiKey;
     const request = await fetch(url);
     let tftData = await request.json();
-    document.getElementById("summonerRankTft").innerHTML = tftData[0].tier + " " + tftData[0].rank;
-    document.getElementById("summonerLeaguePointsTft").innerHTML = tftData[0].leaguePoints;
-    document.getElementById("summonerWins&LoosesTft").innerHTML = tftData[0].wins + " / " + tftData[0].losses;
-    document.getElementById("WinRatioTft").innerHTML = (Math.round((tftData[0].wins / tftData[0].losses)* 100) / 100).toFixed(2);
+    //data from double up queue
+    document.getElementById("summonerRankTftDoubleUp").innerHTML = tftData[0].tier + " " + tftData[0].rank;
+    document.getElementById("summonerLeaguePointsTftDoubleUp").innerHTML = tftData[0].leaguePoints;
+    document.getElementById("summonerWins&LoosesTftDoubleUp").innerHTML = tftData[0].wins + " / " + tftData[0].losses;
+    document.getElementById("WinRatioTftDoubleUp").innerHTML = (Math.round((tftData[0].wins / tftData[0].losses)* 100) / 100).toFixed(2);
+    //data from tft ranked queue
+    document.getElementById("summonerRankTft").innerHTML = tftData[1].tier + " " + tftData[1].rank;
+    document.getElementById("summonerLeaguePointsTft").innerHTML = tftData[1].leaguePoints;
+    document.getElementById("summonerWins&LoosesTft").innerHTML = tftData[1].wins + " / " + tftData[1].losses;
+    document.getElementById("WinRatioTft").innerHTML = (Math.round((tftData[1].wins / tftData[1].losses)* 100) / 100).toFixed(2);
     console.log(tftData);
 }
 
@@ -80,6 +86,10 @@ function clearForm() {
     document.getElementById("summonerLeaguePointsFlex").innerHTML = "";
     document.getElementById("summonerWins&LoosesFlex").innerHTML = "";
     document.getElementById("WinRatioFlex").innerHTML = "";
+    document.getElementById("summonerRankTftDoubleUp").innerHTML = "";
+    document.getElementById("summonerLeaguePointsTftDoubleUp").innerHTML = "";
+    document.getElementById("summonerWins&LoosesTftDoubleUp").innerHTML = "";
+    document.getElementById("WinRatioTftDoubleUp").innerHTML = "";
     document.getElementById("summonerRankTft").innerHTML = "";
     document.getElementById("summonerLeaguePointsTft").innerHTML = "";
     document.getElementById("summonerWins&LoosesTft").innerHTML = "";
