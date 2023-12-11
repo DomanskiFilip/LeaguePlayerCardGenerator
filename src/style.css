@@ -18,6 +18,10 @@ h1{
     font-size: 3rem;
 }
 
+p {
+    text-align: center;
+}
+
 a {
     text-decoration: none;
     color: #af4c4c;
@@ -131,4 +135,40 @@ button {
     font-size: 1rem;
     font-weight: bold;
     margin: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    #playerCard {
+        width: 90%;
+        height: fit-content; 
+        justify-content: center;
+    }
+
+    #generalData {
+        width: 100%;
+    }
+
+    #rankedData {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #cell {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+        .cell span {
+            padding-right: 1rem;
+        }
+
+    .queueData {
+        width: 100%;
+    }
+    
+    
 }
