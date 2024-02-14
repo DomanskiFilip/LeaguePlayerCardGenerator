@@ -12,5 +12,5 @@ The app fetches information about the account from riot games server and display
 
 This project has a massive potential when it comes to new features so I am open for anybody to submit theire ideas and changes.
 
-you can also find the page at: http://adappstudio.co.uk/Filip/LPCG/
+you can also find the page at: https://adappstudio.co.uk/Filip/LPCG/
 
