@@ -12,5 +12,5 @@ The app fetches information about the account from riot games server and display
 
 This project has a massive potential when it comes to new features so I am open for anybody to submit their ideas and changes.
 
-you can also find the page at: https://adappstudio.co.uk/Filip/LPCG/
+!!! - I updated the code to support the new structure of riots apis useing RiotID to get puuid istead of summonername but the CORS problem doesnt allow my hosting address: https://adappstudio.co.uk/Filip/LPCG/  to use the api. With that beeing said I have double checked the requests and they are working so the code itself should be functional.
 
