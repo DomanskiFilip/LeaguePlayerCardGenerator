@@ -1,14 +1,17 @@
 //function checks if form is filled and if it is, it calls GetBasicInfo function.
 function checkForm() {
     let server = document.getElementById("server").value;
+    let serversRitoID = document.getElementById("serversRitoID").value;
     let summonerName = document.getElementById("summonerName").value;
+    let tag = document.getElementById("tag").value;
     let apiKey = document.getElementById("apiKey").value;
     clearForm();
+    document.getElementById("summoner").innerHTML = summonerName;
     if (summonerName == "" || apiKey == "" || server == "") {
         document.getElementById("FillFormError").innerHTML = "PLEASE FILL THE FORM!";
     } else {
         showCard();
-        getBasicInfo(server, summonerName, apiKey);    
+        GetplayerPuuid(server, serversRitoID, summonerName, tag, apiKey);    
     }
 }
 
@@ -20,17 +23,33 @@ function showCard() {
 }
 
 
-// Function GetBasicInfo fills riot api url with server id, summoner name and user Api Key and returns encripted summoner id, icon if and summoner level.
-async function getBasicInfo(server, summonerName, apiKey) {
-    const url = "https://" + server + ".api.riotgames.com/lol/summoner/v4/summoners/by-name/" + summonerName + "?api_key=" + apiKey;
+async function GetplayerPuuid(server, serversRitoID, summonerName, tag, apiKey) {
+    const url = "https://" + serversRitoID + ".api.riotgames.com/riot/account/v1/accounts/by-riot-id/"+ summonerName +"/"+ tag +"?api_key=" + apiKey;
+    try {
+        const request = await fetch(url);
+        if (!request.ok) { // check if HTTP status is 2xx
+            throw new Error(`HTTP error! status: ${request.status}`);
+        }
+        let data = await request.json();
+        getSummonerId(server, apiKey, data.puuid);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+//Function getSummonerId fills riot api url with server id, player puuid and user Api Key and returns encripted summoner id.
+async function getSummonerId(server, apiKey, puuid) {  
+    const url = "https://" + server + ".api.riotgames.com/lol/summoner/v4/summoners/by-puuid/" + puuid + "?api_key=" + apiKey;
     const request = await fetch(url);
     let data = await request.json();
-    document.getElementById("summoner").innerHTML = data.name;
-    document.getElementById("summonerLevel").innerHTML = data.summonerLevel;
     document.getElementById("summonerId").innerHTML = data.id;
+    document.getElementById("summonerLevel").innerHTML = data.summonerLevel;
     getRankInfo(server, apiKey);
-    getTftInfo(server, apiKey)
+    getTftInfo(server, apiKey);
 }
+    
+
+
 
 // Function GetRankInfo fills riot api url with server id, summoner id and user Api Key and returns summoner rank, tier, league points, wins and looses.
 async function getRankInfo(server, apiKey) {

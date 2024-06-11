@@ -9,11 +9,12 @@
     <title>League player card generator</title>
 </head>
 <body>
+    <p id="important">Important! due to CORS the website I host this code does not work!</p>
     <h1>Hello!</h1>
     <p>This is a personal player card generator from the game League of Legends and TFT.</p>
     <p>Free riot API key is avaliable every day <a href="https://developer.riotgames.com/" target="_blank">here</a>.</p>
     <form action="get" name="SummonerForm">
-        <label for="server">Select Riot Server:</label>
+        <label for="server">Select Riot Server (for league):</label>
         <input list="servers" name="server" id="server">
         <datalist id="servers">
             <option value="BR1">Brazil</option>
@@ -32,13 +33,25 @@
             <option value="TW2">Taiwan, Hong Kong, and Macao</option>
             <option value="VN2">Vietnam</option>
           </datalist>
+          <label for="serversRitoID">Select Riot Server (for RiotID):</label>
+          <input list="serversRitoID" name="serversRitoID" id="serversRitoID">
+        <datalist id="serversRitoID">
+            <option value="Europe">Europe</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+        </datalist>
         <label for="summonerName">Enter your nick:</label>
         <input name="summonerName" id="summonerName" type="text" required>
+        <label for="tag">Enter your tag (without #):</label>
+        <input name="tag" id="tag" type="text" required>
         <label for="apiKey">Enter your developer API key:</label>
         <input name="apiKey" id="apiKey" type="password" required>
     </form>
     <p id="FillFormError"></p>
     <button onclick="checkForm()">Get Player Card</button> 
+
+    <button onclick="GetplayerPuuid()">GetplayerPuuid</button> 
+
 
     <section id="playerCard">
         <section id="generalData">
