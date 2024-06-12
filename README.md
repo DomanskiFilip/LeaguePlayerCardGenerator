@@ -12,5 +12,8 @@ The app fetches information about the account from riot games server and display
 
 The project was functional untill recent changes to riot api where they blocked front end access on top of other changes.
 
-!!! - I updated the code to support the new structure of riots apis useing RiotID to get puuid istead of summonername but the CORS problem doesnt allow my hosting address: https://adappstudio.co.uk/Filip/LPCG/  to use the api. With that beeing said I have double checked the requests and they are working so the code itself should be functional.
+12/6/2024: I updated the code to support the new structure of riots apis useing RiotID to get puuid istead of summonername
 
+due to CORS I am not able to host a working web version at this time at: https://adappstudio.co.uk/Filip/LPCG/
+
+To use the app you need to start local server in terminal useing npm start
