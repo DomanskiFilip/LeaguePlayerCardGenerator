@@ -14,7 +14,7 @@ async function getPlayerPuuid(serversRitoID, summonerName, tag, API_Key) {
         console.log(response.data);
         return response.data.puuid;
     } catch (error) {
-        console.error(error);
+        console.error('getPlayerPuuid Error fetching data from Riot API:', error.response.data);
     }
 }
 
@@ -25,7 +25,7 @@ async function getSummonerInfo(server, puuid, API_Key) {
         console.log(response.data);
         return { id: response.data.id, summonerLevel: response.data.summonerLevel };
     } catch (error) {
-        console.error(error);
+        console.error('getSummonerInfo Error fetching data from Riot API:', error.response.data);
         return { id: null, summonerLevel: null }; // return null values in case of an error
     }
 }
@@ -37,7 +37,7 @@ async function getRankInfo(server, summonerId, API_Key) {
         console.log(response.data);
         return { tier: response.data[0].tier, rank: response.data[0].rank, leaguePoints: response.data[0].leaguePoints, wins: response.data[0].wins, losses: response.data[0].losses };
     } catch (error) {
-        console.error(error);
+        console.error('getRankInfo Error fetching data from Riot API:', error.response.data);
         return { tier: null, rank: null, leaguePoints: null, wins: null, losses: null }; // return null values in case of an error
     }
 }
@@ -50,7 +50,7 @@ async function getTftInfo(server, summonerId, API_Key){
         console.log(response.data);
         return { tierDoubleUp: response.data[0].tier, rankDoubleUp: response.data[0].rank, leaguePointsDoubleUp: response.data[0].leaguePoints, winsDoubleUp: response.data[0].wins, lossesDoubleUp: response.data[0].losses };
     } catch (error) {
-        console.error(error);
+        console.error('getTftInfo Error fetching data from Riot API:', error.response.data);
         return { tierDoubleUp: null, rankDoubleUp: null, leaguePointsDoubleUp: null, winsDoubleUp: null, lossesDoubleUp: null }; // return null values in case of an error
     }
 }
@@ -77,6 +77,9 @@ app.get('/getPlayerPuuid', async (req, res) => {
     });
 });
 
+
+
 app.listen(3000, function () {
     console.log('CORS-enabled web server listening on port 3000');
 });
+
