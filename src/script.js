@@ -69,10 +69,10 @@ function clearForm() {
     document.getElementById("summonerLeaguePointsTftDoubleUp").innerHTML = "";
     document.getElementById("summonerWins&LoosesTftDoubleUp").innerHTML = "";
     document.getElementById("WinRatioTftDoubleUp").innerHTML = "";
-    document.getElementById("summonerRankTft").innerHTML = "";
-    document.getElementById("summonerLeaguePointsTft").innerHTML = "";
-    document.getElementById("summonerWins&LoosesTft").innerHTML = "";
-    document.getElementById("WinRatioTft").innerHTML = "";
+   // document.getElementById("summonerRankTft").innerHTML = "";
+   // document.getElementById("summonerLeaguePointsTft").innerHTML = "";
+   // document.getElementById("summonerWins&LoosesTft").innerHTML = "";
+   // document.getElementById("WinRatioTft").innerHTML = "";
     }
     //hides card if needed
     if (document.getElementById("apiKey").value == "" && document.getElementById("playerCard").style.display == "flex" && document.getElementById("summonerName").value == "" && document.getElementById("server").value == "") {
