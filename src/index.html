@@ -9,8 +9,7 @@
     <title>League player card generator</title>
 </head>
 <body>
-    <p id="important">Important! due to CORS the website I host this code on does not work!</p>
-    <h1>Hello!</h1>
+     <h1>Hello!</h1>
     <p>This is a personal player card generator from the game League of Legends and TFT.</p>
     <p>Free riot API key is avaliable every day <a href="https://developer.riotgames.com/" target="_blank">here</a>.</p>
     <form action="get" name="SummonerForm">
@@ -33,8 +32,8 @@
             <option value="TW2">Taiwan, Hong Kong, and Macao</option>
             <option value="VN2">Vietnam</option>
           </datalist>
-          <label for="serversRitoID">Select Riot Server (for RiotID):</label>
-          <input list="serversRitoID" name="serversRitoID" id="serversRitoID">
+          <label for="serverRitoID">Select Riot Server (for RiotID):</label>
+          <input list="serversRitoID" name="serverRitoID" id="serverRitoID">
         <datalist id="serversRitoID">
             <option value="Europe">Europe</option>
             <option value="Americas">Americas</option>
@@ -49,9 +48,6 @@
     </form>
     <p id="FillFormError"></p>
     <button onclick="checkForm()">Get Player Card</button> 
-
-    <button onclick="GetplayerPuuid()">GetplayerPuuid</button> 
-
 
     <section id="playerCard">
         <section id="generalData">
@@ -87,26 +83,6 @@
                 <section class="cell">
                     <p>LP:</p>
                     <span id="summonerLeaguePointsSolo"></span>
-                </section>
-            </section>
-
-            <section class="queueData">
-                <h2>Flex</h2>
-                <section class="cell">
-                    <p>rank:</p>
-                    <span id="summonerRankFlex"></span>
-                </section>
-                <section class="cell">
-                    <p>wins/looses:</p>
-                    <span id="summonerWins&LoosesFlex"></span>
-                </section>
-                <section class="cell">
-                    <p>win ratio:</p>
-                    <span id="WinRatioFlex"></span>
-                </section>
-                <section class="cell">
-                    <p>LP:</p>
-                    <span id="summonerLeaguePointsFlex"></span>
                 </section>
             </section>
 
