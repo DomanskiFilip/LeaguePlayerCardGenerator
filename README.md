@@ -10,10 +10,8 @@ simply create a developer account, copy your api key, paste it into the website 
 
 The app fetches information about the account from riot games server and displays current win ratio, rank and League Points (LP) in four different modes.
 
-The project was functional untill recent changes to riot api where they blocked front end access on top of other changes.
-
 12/6/2024: I updated the code to support the new structure of riots apis useing RiotID to get puuid istead of summonername
 
-due to CORS I am not able to host a working web version at this time at: https://adappstudio.co.uk/Filip/LPCG/
+due to CORS I am no longer able to host a working web version at https://adappstudio.co.uk/Filip/LPCG/ at this time 
 
-To use the app you need to start local server in terminal useing npm start
+To use the app you need to start local node.js server in terminal
