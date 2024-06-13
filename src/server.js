@@ -14,7 +14,11 @@ async function getPlayerPuuid(serversRitoID, summonerName, tag, API_Key) {
         console.log(response.data);
         return response.data.puuid;
     } catch (error) {
-        console.error('getPlayerPuuid Error fetching data from Riot API:', error.response.data);
+        if (error.response) {
+            console.error('getPlayerPuuid Error fetching data from Riot API:', error.response.data);
+        } else {
+            console.error('getPlayerPuuid Error:', error.message);
+        }
     }
 }
 
