@@ -14,4 +14,8 @@ The app fetches information about the account from riot games server and display
 
 due to CORS I am no longer able to host a working web version at https://adappstudio.co.uk/Filip/LPCG/ at this time 
 
-To use the app you need to start local node.js server in terminal
+To use the app you need to start local node.js server in terminal:
+
+you can do this by going to Node,js comand prompt -> navigateing to correct folder useing cd -> writeing npm start
+
+after that you can open index.html locally fill the form and eveything should work!

@@ -1,18 +1,20 @@
-//function checks if form is filled and if it is, it calls GetBasicInfo function.
+//function checks if form is filled and if it is, it calls getPlayerPuuid function.
 function checkForm() {
-    let server = document.getElementById("server").value;
-    let serversRitoID = document.getElementById("serversRitoID").value;
+    let serversRitoID = document.getElementById("serverRitoID").value;
     let summonerName = document.getElementById("summonerName").value;
     let tag = document.getElementById("tag").value;
     let apiKey = document.getElementById("apiKey").value;
-    clearForm();
+    let server = document.getElementById("server").value;
+    
+    
     document.getElementById("summoner").innerHTML = summonerName;
-    if (summonerName == "" || apiKey == "" || server == "") {
+    if(summonerName === "" || apiKey === "" || server === "" || serversRitoID === "") {
         document.getElementById("FillFormError").innerHTML = "PLEASE FILL THE FORM!";
     } else {
         showCard();
         getPlayerPuuid(server, serversRitoID, summonerName, tag, apiKey);    
     }
+    clearForm();
 }
 
 // Function ShowCard shows card with summoner info and centers page on it.
@@ -24,7 +26,8 @@ function showCard() {
 
 
 async function getPlayerPuuid(server, serversRitoID, summonerName, tag, apikey) {
-    const url = "http://localhost:3000/getPlayerPuuid?serversRitoID=" + serversRitoID + "&summonerName=" + summonerName + "&tag=" + tag + "&server=" + server + "&apikey=" + apikey;  try {
+    const url = "http://localhost:3000/getPlayerPuuid?serversRitoID=" + serversRitoID + "&summonerName=" + summonerName + "&tag=" + tag + "&server=" + server + "&apikey=" + apikey;
+      try {
         const request = await fetch(url);
         if (!request.ok) {
             throw new Error(`HTTP error! status: ${request.status}`);
