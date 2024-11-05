@@ -1,11 +1,12 @@
 let express = require('express');
 let cors = require('cors');
 const axios = require('axios');
-
+const path = require('path');
 
 let app = express();
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../src')));
 
 async function getPlayerPuuid(serversRitoID, summonerName, tag, API_Key) {
     const url = "https://" + serversRitoID + ".api.riotgames.com/riot/account/v1/accounts/by-riot-id/" + summonerName + "/" + tag + "?api_key=" + API_Key;
@@ -102,7 +103,10 @@ app.get('/getPlayerPuuid', async (req, res) => {
     }
 });
 
-
+// Serve index.html on the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../src/index.html'));
+});
 
 app.listen(3000, function () {
     console.log('CORS-enabled web server listening on port 3000');
