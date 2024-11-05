@@ -34,7 +34,7 @@ async function getSummonerInfo(server, puuid, API_Key) {
         } else {
             console.error('getSummonerInfo Error:', error.message);
         }
-        return { id: null, summonerLevel: null }; // return null values in case of an error
+        return { id: null, summonerLevel: null };
     }
 }
 
@@ -50,7 +50,7 @@ async function getRankInfo(server, summonerId, API_Key) {
         } else {
             console.error('getRankInfo Error:', error.message);
         }
-        return { tier: null, rank: null, leaguePoints: null, wins: null, losses: null }; // return null values in case of an error
+        return { tier: null, rank: null, leaguePoints: null, wins: null, losses: null };
     }
 }
 
@@ -66,7 +66,7 @@ async function getTftInfo(server, summonerId, API_Key) {
         } else {
             console.error('getTftInfo Error:', error.message);
         }
-        return { tierDoubleUp: null, rankDoubleUp: null, leaguePointsDoubleUp: null, winsDoubleUp: null, lossesDoubleUp: null }; // return null values in case of an error
+        return { tierDoubleUp: null, rankDoubleUp: null, leaguePointsDoubleUp: null, winsDoubleUp: null, lossesDoubleUp: null };
     }
 }
 
