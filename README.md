@@ -14,7 +14,7 @@ The app fetches information about the account from riot games server and display
 
 To use the app you need to start local node.js server in terminal:
 
-you can do this by going to Node,js comand prompt -> navigateing to correct folder useing cd -> writeing npm start
+you can do this by going to Node.js comand prompt -> navigateing to correct folder useing cd -> writeing npm start
 
 05/11/2024: I added Dockerfile you can now build it and run it as container! remember to assign port when runing the container by doing so you can go to your localhost at the assigned port and the webpage will appear fully functional
 
