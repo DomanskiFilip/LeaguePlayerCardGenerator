@@ -16,8 +16,8 @@ To use the app you need to start local node.js server in terminal:
 
 you can do this by going to Node.js comand prompt -> navigateing to correct folder useing cd -> writeing npm start
 
-05/11/2024: I added Dockerfile you can now build it and run it as container! remember to assign port when runing the container by doing so you can go to your localhost at the assigned port and the webpage will appear fully functional
-
 after that you can open index.html locally fill the form and eveything should work!
+
+05/11/2024: I added Dockerfile you can now build it and run it as container! remember to assign port when runing the container by doing so you can go to your localhost at the assigned port and the webpage will appear fully functional
 
 I am also planing to host the website online so stay tuned!
