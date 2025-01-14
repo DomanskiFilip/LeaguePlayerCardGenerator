@@ -78,3 +78,12 @@ function clearForm() {
         document.getElementById("playerCard").style.display = "none";
     }
 }
+
+// update year in footer
+function updateYear(){
+    let year = document.getElementById("year");
+    let date = new Date();
+    year.innerHTML = date.getFullYear();
+  }
+
+  updateYear();
