@@ -26,3 +26,4 @@ I am also planing to host the website online so stay tuned!
 
 ![image](https://github.com/user-attachments/assets/ec6f6269-a167-40ec-8722-762ae33b2fbd)
 
+(this player only played TFT mode thats why the solo duo collumn is null)
