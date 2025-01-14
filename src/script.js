@@ -85,5 +85,7 @@ function updateYear(){
     let date = new Date();
     year.innerHTML = date.getFullYear();
   }
-
-  updateYear();
+  
+  document.addEventListener('DOMContentLoaded', (event) => {
+    updateYear();
+});
