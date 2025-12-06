@@ -26,13 +26,14 @@ function showCard() {
 
 
 async function getPlayerPuuid(server, serversRitoID, summonerName, tag, apikey) {
-    const url = "http://localhost:3000/getPlayerPuuid?serversRitoID=" + serversRitoID + "&summonerName=" + summonerName + "&tag=" + tag + "&server=" + server + "&apikey=" + apikey;
-      try {
-        const request = await fetch(url);
-        if (!request.ok) {
-            throw new Error(`HTTP error! status: ${request.status}`);
+    const url = "/getPlayerPuuid?serversRitoID=" + serversRitoID + "&summonerName=" + summonerName + "&tag=" + tag + "&apikey=" + apikey + "&server=" + server;
+    
+    try {
+        const response = await axios.get(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-        let rankInfo = await request.json();
+        let rankInfo = await response.json();
         fillRankInfo(rankInfo);
     } catch (error) {
         console.log(error);
