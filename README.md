@@ -20,10 +20,13 @@ after that you can open index.html locally fill the form and eveything should wo
 
 05/11/2024: I added Dockerfile you can now build it and run it as container! remember to assign port when runing the container by doing so you can go to your localhost at the assigned port and the webpage will appear fully functional
 
-I am also planing to host the website online so stay tuned!
+**HOSTING:**
+
+
+06/12/2025: the website is now hosted on render.com at: https://leagueplayercardgenerator.onrender.com
 
 ![image](https://github.com/user-attachments/assets/d072afbb-b78e-48d9-a2d9-e64133aba6e4)
 
 ![image](https://github.com/user-attachments/assets/ec6f6269-a167-40ec-8722-762ae33b2fbd)
 
-(this player only played TFT mode thats why the solo duo collumn is null)
+
