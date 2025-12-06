@@ -30,13 +30,16 @@ async function getPlayerPuuid(server, serversRitoID, summonerName, tag, apikey) 
     
     try {
         const response = await axios.get(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        let rankInfo = await response.json();
+
+        let rankInfo = response.data;
         fillRankInfo(rankInfo);
     } catch (error) {
         console.log(error);
+        if (error.response && error.response.data && error.response.data.error) {
+             document.getElementById("FillFormError").innerHTML = "Error: " + error.response.data.error;
+        } else {
+             document.getElementById("FillFormError").innerHTML = "Error: Could not retrieve player data. Check API key and details.";
+        }
     }
 }
 

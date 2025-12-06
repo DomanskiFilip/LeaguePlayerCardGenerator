@@ -6,7 +6,7 @@ const path = require('path');
 let app = express();
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../src')));
+app.use(express.static(path.join(__dirname, '.')));
 
 async function getPlayerPuuid(serversRitoID, summonerName, tag, API_Key) {
     const url = "https://" + serversRitoID + ".api.riotgames.com/riot/account/v1/accounts/by-riot-id/" + summonerName + "/" + tag + "?api_key=" + API_Key;
@@ -43,6 +43,7 @@ async function getRankInfo(server, summonerId, API_Key) {
     const url = "https://" + server + ".api.riotgames.com/lol/league/v4/entries/by-summoner/" + summonerId + "?api_key=" + API_Key;
     try {
         const response = await axios.get(url);
+        // Note: response.data is an array, ensure your application logic handles it correctly (e.g., response.data[0])
         console.log(response.data);
         return { tier: response.data[0].tier, rank: response.data[0].rank, leaguePoints: response.data[0].leaguePoints, wins: response.data[0].wins, losses: response.data[0].losses };
     } catch (error) {
@@ -59,6 +60,7 @@ async function getTftInfo(server, summonerId, API_Key) {
     const url = "https://" + server + ".api.riotgames.com/tft/league/v1/entries/by-summoner/" + summonerId + "?api_key=" + API_Key;
     try {
         const response = await axios.get(url);
+        // Note: response.data is an array, ensure your application logic handles it correctly (e.g., response.data[0])
         console.log(response.data);
         return { tierDoubleUp: response.data[0].tier, rankDoubleUp: response.data[0].rank, leaguePointsDoubleUp: response.data[0].leaguePoints, winsDoubleUp: response.data[0].wins, lossesDoubleUp: response.data[0].losses };
     } catch (error) {
@@ -105,10 +107,10 @@ app.get('/getPlayerPuuid', async (req, res) => {
 
 // Serve index.html on the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../src/index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000, function () {
-    console.log('CORS-enabled web server listening on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+    console.log(`CORS-enabled web server listening on port ${PORT}`);
 });
-
