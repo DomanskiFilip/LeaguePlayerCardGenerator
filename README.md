@@ -1,5 +1,7 @@
 # LeaguePlayerCardGenerator
 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 welcome to my first website project made with github in mind!
 
 As a Cs student, web developer and League player I decided to combine my interests into one simple github project.
